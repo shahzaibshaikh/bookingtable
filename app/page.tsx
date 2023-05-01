@@ -1,7 +1,12 @@
+'use client';
+
 import Link from 'next/link';
-import styles from './page.module.css';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 export default function Home() {
+  const router = useRouter();
+  const [location, setLocation] = useState();
   return (
     <main className='bg-gray-100 min-h-screen w-screen'>
       <main className='max-w-screen-2xl m-auto bg-white'>
