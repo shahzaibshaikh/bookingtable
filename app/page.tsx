@@ -14,7 +14,6 @@ export default function Home() {
           <div className='py-3 px-36 mt-10 flex flex-wrap justify-center'>
             <RestaurantCard />
           </div>
-          {/* CARDS */}
         </main>
       </main>
     </main>
