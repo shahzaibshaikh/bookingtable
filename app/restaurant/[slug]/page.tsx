@@ -1,5 +1,4 @@
 import Navbar from '@/app/components/Navbar';
-import Link from 'next/link';
 import React from 'react';
 import Header from './components/Header';
 import RestaurantNavbar from './components/RestaurantNavbar';
