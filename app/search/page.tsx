@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import Header from './components/Header';
 import SearchSidebar from './components/SearchSidebar';
 import RestaurantCard from './components/RestaurantCard';
