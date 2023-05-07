@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../components/Header';
 import RestaurantNavbar from '../components/RestaurantNavbar';
 import Menu from '../components/Menu';
 
