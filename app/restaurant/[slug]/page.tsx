@@ -6,6 +6,9 @@ import Description from './components/Description';
 import Images from './components/Images';
 import Reviews from './components/Reviews';
 import ReservationCard from './components/ReservationCard';
+import { metadata } from '@/app/layout';
+
+metadata.title = 'Booking Table Restaurant';
 
 function RestaurantDetail() {
   return (
