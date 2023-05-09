@@ -8,7 +8,7 @@ import Reviews from './components/Reviews';
 import ReservationCard from './components/ReservationCard';
 import { metadata } from '@/app/layout';
 
-metadata.title = 'Booking Table ';
+metadata.title = 'Booking Table Restaurant';
 
 function RestaurantDetail() {
   return (
