@@ -17,6 +17,7 @@ function RestaurantDetail() {
         <RestaurantNavbar />
         <Title />
         <Rating />
+        <Description />
         <Images />
         <Reviews />
       </div>
