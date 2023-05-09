@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Form from './components/Form';
 import { metadata } from '@/app/layout';
 
-metadata.title = 'Booking Table Reservation';
+metadata.title = 'Booking Table';
 
 function Reserve() {
   return (
