@@ -19,7 +19,6 @@ function RestaurantDetail() {
         <Rating />
         <Description />
         <Images />
-        <Reviews />
       </div>
       <div className='w-[27%] relative text-reg'>
         <ReservationCard />
