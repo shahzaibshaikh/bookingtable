@@ -15,7 +15,7 @@ model Restaurant{
   name          String
   main_image    String
   description   String
-  images        String
+  images        String[]
   open_time     String
   close_time    String
   slug          String    @unique
