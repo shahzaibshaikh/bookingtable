@@ -18,6 +18,7 @@ model Restaurant{
   images        String[]
   open_time     String
   close_time    String
+  slug          String    @unique
   price         PRICE
   items         Item[]
   location_id   Int
