@@ -13,7 +13,7 @@ export interface RestaurantCardType {
   price: PRICE;
 }
 
-const fetchRestaurants = async () => {
+const fetchRestaurants = async (): Promise<RestaurantCardType[]> => {
   const restaurants = prisma.restaurant.findMany({
     select: {
       id: true,
