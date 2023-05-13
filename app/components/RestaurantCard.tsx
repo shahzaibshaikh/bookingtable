@@ -1,7 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
+import { RestaurantCardType } from '../page';
 
-function RestaurantCard() {
+interface Props {
+  restaurant: RestaurantCardType;
+}
+
+function RestaurantCard({ restaurant }: Props) {
   return (
     <div className='w-64 h-72 m-3 rounded overflow-hidden border cursor-pointer'>
       <Link href='/restaurant/milestone-grill'>
