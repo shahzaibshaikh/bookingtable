@@ -19,7 +19,6 @@ const fetchRestaurants = async (): Promise<RestaurantCardType[]> => {
     select: {
       id: true,
       name: true,
-      main_image: true,
       cuisine: true,
       location: true,
       price: true,
