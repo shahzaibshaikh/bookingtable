@@ -5,7 +5,16 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const fetchRestaurants = async () => {
-  const restaurants = prisma.restaurant.findMany();
+  const restaurants = prisma.restaurant.findMany({
+    select: {
+      id: true,
+      name: true,
+      main_image: true,
+      cuisine: true,
+      location: true,
+      price: true
+    }
+  });
   return restaurants;
 };
 
