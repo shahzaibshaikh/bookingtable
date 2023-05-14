@@ -17,10 +17,13 @@ const fetchRestaurant = async (slug: string) => {
   const restaurant = prisma.restaurant.findUnique({
     where: { slug }
   });
+  return restaurant;
 };
 
 async function RestaurantDetail({ params }: { params: { slug: string } }) {
   const restaurant = await fetchRestaurant(params.slug);
+  console.log(restaurant);
+
   return (
     <>
       <div className='bg-white w-[70%] rounded p-3 shadow'>
