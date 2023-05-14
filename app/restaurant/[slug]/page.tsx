@@ -7,8 +7,17 @@ import Images from './components/Images';
 import Reviews from './components/Reviews';
 import ReservationCard from './components/ReservationCard';
 import { metadata } from '@/app/layout';
+import { PrismaClient } from '@prisma/client';
 
 metadata.title = 'Booking Table Restaurant';
+
+const prisma = new PrismaClient();
+
+const fetchRestaurant = async (slug: string) => {
+  const restaurant = prisma.restaurant.findUnique({
+    where: { slug }
+  });
+};
 
 function RestaurantDetail() {
   return (
