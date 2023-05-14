@@ -19,7 +19,8 @@ const fetchRestaurant = async (slug: string) => {
   });
 };
 
-function RestaurantDetail() {
+async function RestaurantDetail({ params }: { params: { slug: string } }) {
+  const restaurant = await fetchRestaurant(params.slug);
   return (
     <>
       <div className='bg-white w-[70%] rounded p-3 shadow'>
