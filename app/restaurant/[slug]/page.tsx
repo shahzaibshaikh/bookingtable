@@ -43,7 +43,7 @@ async function RestaurantDetail({ params }: { params: { slug: string } }) {
   return (
     <>
       <div className='bg-white w-[70%] rounded p-3 shadow'>
-        <RestaurantNavbar />
+        <RestaurantNavbar slug={params.slug} />
         <Title />
         <Rating />
         <Description />
