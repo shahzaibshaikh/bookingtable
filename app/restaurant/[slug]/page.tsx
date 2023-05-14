@@ -13,6 +13,14 @@ metadata.title = 'Booking Table Restaurant';
 
 const prisma = new PrismaClient();
 
+interface RestaurantDetail {
+  id: number;
+  name: string;
+  images: string[];
+  description: string;
+  slug: string;
+}
+
 const fetchRestaurant = async (slug: string) => {
   const restaurant = prisma.restaurant.findUnique({
     where: { slug },
@@ -24,6 +32,7 @@ const fetchRestaurant = async (slug: string) => {
       slug: true
     }
   });
+
   return restaurant;
 };
 
