@@ -15,7 +15,14 @@ const prisma = new PrismaClient();
 
 const fetchRestaurant = async (slug: string) => {
   const restaurant = prisma.restaurant.findUnique({
-    where: { slug }
+    where: { slug },
+    select: {
+      id: true,
+      name: true,
+      images: true,
+      description: true,
+      slug: true
+    }
   });
   return restaurant;
 };
