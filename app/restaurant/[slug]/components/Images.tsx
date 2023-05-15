@@ -14,5 +14,3 @@ function Images({ images }: { images: string[] }) {
     </div>
   );
 }
-
-export default Images;
