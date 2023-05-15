@@ -8,4 +8,4 @@ function Description({ description }: { description: string }) {
   );
 }
 
-export default Description;
+export  Description;
