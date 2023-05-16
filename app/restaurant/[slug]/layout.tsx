@@ -2,8 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 
 function RestaurantLayout({
-  children,
-  params
+  children
 }: {
   children: React.ReactNode;
   params: { slug: string };
