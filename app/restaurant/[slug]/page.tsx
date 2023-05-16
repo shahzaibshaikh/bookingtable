@@ -28,8 +28,7 @@ const fetchRestaurant = async (slug: string) => {
       id: true,
       name: true,
       images: true,
-      description: true,
-      slug: true
+      description: true
     }
   });
 
