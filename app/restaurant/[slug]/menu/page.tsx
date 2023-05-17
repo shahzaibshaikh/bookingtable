@@ -23,7 +23,9 @@ const fetchRestaurantMenu = async (slug: string) => {
   return restaurant.items;
 };
 
-function RestaurantMenu({ params }: { params: { slug: string } }) {
+async function RestaurantMenu({ params }: { params: { slug: string } }) {
+  const menu = await fetchRestaurantMenu(params.slug);
+
   return (
     <div className='bg-white w-[100%] rounded p-3 shadow'>
       <RestaurantNavbar slug={params?.slug} />
