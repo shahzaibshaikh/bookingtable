@@ -1,7 +1,8 @@
 import React from 'react';
 import MenuCard from './MenuCard';
+import { Item } from '@prisma/client';
 
-function Menu() {
+function Menu({ menu }: { menu: Item[] }) {
   return (
     <main className='bg-white mt-5'>
       <div>

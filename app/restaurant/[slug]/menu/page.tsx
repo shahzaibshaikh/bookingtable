@@ -29,7 +29,7 @@ async function RestaurantMenu({ params }: { params: { slug: string } }) {
   return (
     <div className='bg-white w-[100%] rounded p-3 shadow'>
       <RestaurantNavbar slug={params?.slug} />
-      <Menu />
+      <Menu menu={menu} />
     </div>
   );
 }
