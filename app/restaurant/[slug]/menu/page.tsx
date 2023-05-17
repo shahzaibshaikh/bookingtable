@@ -2,8 +2,17 @@ import React from 'react';
 import RestaurantNavbar from '../components/RestaurantNavbar';
 import Menu from '../components/Menu';
 import { metadata } from '@/app/layout';
+import { PrismaClient } from '@prisma/client';
 
 metadata.title = 'Booking Table Menu';
+
+const prisma = new PrismaClient();
+
+const fetchItems = async (slug: string) => {
+  const restaurant = await prisma.restaurant.findUnique({
+    where: { slug }
+  });
+};
 
 function RestaurantMenu({ params }: { params: { slug: string } }) {
   return (
