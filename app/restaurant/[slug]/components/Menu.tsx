@@ -10,7 +10,9 @@ function Menu({ menu }: { menu: Item[] }) {
           <h1 className='font-bold text-4xl'>Menu</h1>
         </div>
         <div className='flex flex-wrap justify-between'>
-          <MenuCard />
+          {menu.map(item => (
+            <MenuCard />
+          ))}
         </div>
       </div>
     </main>
