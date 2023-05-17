@@ -11,7 +11,7 @@ function Menu({ menu }: { menu: Item[] }) {
         </div>
         <div className='flex flex-wrap justify-between'>
           {menu.map(item => (
-            <MenuCard />
+            <MenuCard key={item.id} item={item} />
           ))}
         </div>
       </div>

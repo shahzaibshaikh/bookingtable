@@ -38,7 +38,6 @@ const fetchRestaurant = async (slug: string) => {
 
 async function RestaurantDetail({ params }: { params: { slug: string } }) {
   const restaurant = await fetchRestaurant(params.slug);
-  console.log(restaurant);
 
   return (
     <>
