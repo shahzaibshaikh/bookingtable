@@ -8,7 +8,7 @@ metadata.title = 'Booking Table Menu';
 
 const prisma = new PrismaClient();
 
-const fetchItems = async (slug: string) => {
+const fetchRestaurantMenu = async (slug: string) => {
   const restaurant = await prisma.restaurant.findUnique({
     where: { slug },
     select: {
