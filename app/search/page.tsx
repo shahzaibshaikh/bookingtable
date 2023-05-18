@@ -29,8 +29,7 @@ const fetchRestaurantsByCity = (city: string | undefined) => {
             equals: city.toLowerCase()
           }
         }
-      },
-      select
+      }
     });
   }
 };
