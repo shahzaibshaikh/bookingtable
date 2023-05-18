@@ -3,8 +3,13 @@ import Header from './components/Header';
 import SearchSidebar from './components/SearchSidebar';
 import RestaurantCard from './components/RestaurantCard';
 import { metadata } from '../layout';
+import { PrismaClient } from '@prisma/client';
 
 metadata.title = 'Booking Table Search';
+
+const prisma = new PrismaClient();
+
+const fetchRestaurantsByCity = async () => {};
 
 function Search({ searchParams }: { searchParams: { city: string } }) {
   return (
