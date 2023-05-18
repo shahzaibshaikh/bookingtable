@@ -16,7 +16,7 @@ const fetchRestaurantsByCity = (city: string | undefined) => {
       where: {
         location: {
           name: {
-            equals: city
+            equals: city.toLowerCase()
           }
         }
       }
