@@ -29,12 +29,15 @@ const fetchRestaurantsByCity = (city: string | undefined) => {
             equals: city.toLowerCase()
           }
         }
-      }
+      },
+      select
     });
   }
 };
 
 async function Search({ searchParams }: { searchParams: { city: string } }) {
+  const restaurants = await fetchRestaurantsByCity(searchParams.city);
+
   return (
     <>
       <Header />
