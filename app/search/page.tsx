@@ -6,7 +6,7 @@ import { metadata } from '../layout';
 
 metadata.title = 'Booking Table Search';
 
-function Search() {
+function Search({ searchParams }: { searchParams: { city: string } }) {
   return (
     <>
       <Header />
