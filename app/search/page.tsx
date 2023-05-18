@@ -9,20 +9,24 @@ metadata.title = 'Booking Table Search';
 
 const prisma = new PrismaClient();
 
-const fetchRestaurantsByCity = async (city: string) => {
-  const restaurants = await prisma.restaurant.findMany({
-    where: {
-      location: {
-        name: {
-          equals: city
+const fetchRestaurantsByCity = (city: string) => {
+  if (!city) return prisma.restaurant.findMany();
+  else {
+    return prisma.restaurant.findMany({
+      where: {
+        location: {
+          name: {
+            equals: city
+          }
         }
       }
-    }
-  });
-  return restaurants;
+    });
+  }
 };
 
-function Search({ searchParams }: { searchParams: { city: string } }) {
+async function Search({ searchParams }: { searchParams: { city: string } }) {
+  const restaurants = await fetchRestaurantsByCity(searchParams.city);
+
   return (
     <>
       <Header />
