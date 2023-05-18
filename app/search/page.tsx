@@ -10,7 +10,17 @@ metadata.title = 'Booking Table Search';
 const prisma = new PrismaClient();
 
 const fetchRestaurantsByCity = (city: string | undefined) => {
-  if (!city) return prisma.restaurant.findMany();
+  const select = {
+    id: true,
+    name: true,
+    main_image: true,
+    price: true,
+    cuisine: true,
+    location: true,
+    slug: true
+  };
+
+  if (!city) return prisma.restaurant.findMany({ select });
   else {
     return prisma.restaurant.findMany({
       where: {
@@ -19,7 +29,8 @@ const fetchRestaurantsByCity = (city: string | undefined) => {
             equals: city.toLowerCase()
           }
         }
-      }
+      },
+      select
     });
   }
 };
