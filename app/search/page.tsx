@@ -9,7 +9,7 @@ metadata.title = 'Booking Table Search';
 
 const prisma = new PrismaClient();
 
-const fetchRestaurantsByCity = (city: string) => {
+const fetchRestaurantsByCity = (city: string | undefined) => {
   if (!city) return prisma.restaurant.findMany();
   else {
     return prisma.restaurant.findMany({
