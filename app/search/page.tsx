@@ -36,8 +36,6 @@ const fetchRestaurantsByCity = (city: string | undefined) => {
 };
 
 async function Search({ searchParams }: { searchParams: { city: string } }) {
-  const restaurants = await fetchRestaurantsByCity(searchParams.city);
-
   return (
     <>
       <Header />
