@@ -50,3 +50,5 @@ async function Search({ searchParams }: { searchParams: { city: string } }) {
     </>
   );
 }
+
+export default Search;
