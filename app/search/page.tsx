@@ -47,6 +47,7 @@ async function Search({ searchParams }: { searchParams: { city: string } }) {
           {restaurants.length ? <RestaurantCard /> : <p>Sorry, no restaurants found.</p>}
         </div>
       
+    </>
   );
 }
 
