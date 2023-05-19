@@ -46,7 +46,7 @@ async function Search({ searchParams }: { searchParams: { city: string } }) {
         <div className='w-5/6'>
           {restaurants.length ? <RestaurantCard /> : <p>Sorry, no restaurants found.</p>}
         </div>
-      </div>
+      
     </>
   );
 }
