@@ -22,7 +22,6 @@ model Restaurant{
   price         PRICE
   items         Item[]
   location_id   Int
-  location      Location @relation(fields: [location_id], references: [id])
   cuisine_id    Int
   cuisine       Cuisine  @relation(fields: [cuisine_id], references: [id])
   created_at    DateTime  @default(now())
