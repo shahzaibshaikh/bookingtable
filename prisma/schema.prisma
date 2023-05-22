@@ -30,7 +30,7 @@ model Restaurant{
 }
 
 model Item{
-  id            Int       @id  
+  id            Int       @id   @default(autoincrement())
   name          String
   price         String
   description   String
