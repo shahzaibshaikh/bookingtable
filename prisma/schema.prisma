@@ -50,8 +50,3 @@ model Cuisine {
   updated_at    DateTime  @updatedAt  
 }
 
-enum PRICE {
-  CHEAP
-  REGULAR
-  EXPENSIVE
-}
