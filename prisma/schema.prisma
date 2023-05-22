@@ -16,7 +16,7 @@ model Restaurant{
   main_image    String
   description   String
   images        String
-  open_time     Int
+  open_time     Float
   close_time    String
   slug          String    @unique
   price         PRICE
