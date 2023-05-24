@@ -13,7 +13,7 @@ datasource db {
 model Restaurant{
   id            Int       @id   @default(autoincrement())
   name          String
-  main_image    String
+  main_image    
   description   String
   images        String[]
   open_time     String
