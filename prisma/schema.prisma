@@ -50,7 +50,7 @@ model Location {
 
 model Cuisine {
   id            Int       @id   @default(autoincrement())
-  name          
+  name          String
   restaurants   Restaurant[]
   created_at    DateTime  @default(now())
   updated_at    DateTime  @updatedAt  
