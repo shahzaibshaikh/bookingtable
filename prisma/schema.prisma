@@ -59,4 +59,5 @@ model Cuisine {
 enum PRICE {
   CHEAP
   REGULAR
+  EXPENSIVE
 }
