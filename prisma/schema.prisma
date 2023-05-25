@@ -53,6 +53,7 @@ model Cuisine {
   name          String
   restaurants   Restaurant[]
   created_at    DateTime  @default(now())
+  updated_at    DateTime  @updatedAt  
 }
 
 enum PRICE {
