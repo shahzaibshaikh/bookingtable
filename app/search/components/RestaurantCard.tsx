@@ -16,11 +16,7 @@ interface Restaurant {
 function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
   return (
     <div className='border-b flex pb-5'>
-      <img
-        src='https://images.otstatic.com/prod1/49153814/2/medium.jpg'
-        alt=''
-        className='w-44 rounded'
-      />
+      <img src={restaurant.main_image} alt='' className='w-44 rounded' />
       <div className='pl-5'>
         <h2 className='text-3xl'>{restaurant.name}</h2>
         <div className='flex items-start'>
