@@ -1,6 +1,13 @@
+import { Cuisine, Location } from '@prisma/client';
 import React from 'react';
 
-function SearchSidebar() {
+function SearchSidebar({
+  locations,
+  cuisines
+}: {
+  locations: Location[];
+  cuisines: Cuisine[];
+}) {
   return (
     <div className='w-1/5'>
       <div className='border-b pb-4'>
