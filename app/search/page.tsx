@@ -40,7 +40,7 @@ const fetchLocations = async () => {
 };
 
 const fetchCuisines = async () => {
-  return prisma.location.findMany();
+  return prisma.cuisine.findMany();
 };
 
 async function Search({ searchParams }: { searchParams: { city: string } }) {

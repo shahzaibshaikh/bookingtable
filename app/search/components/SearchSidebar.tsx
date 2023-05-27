@@ -18,9 +18,9 @@ function SearchSidebar({
       </div>
       <div className='border-b pb-4 mt-3'>
         <h1 className='mb-2'>Cuisine</h1>
-        <p className='font-light text-reg'>Mexican</p>
-        <p className='font-light text-reg'>Italian</p>
-        <p className='font-light text-reg'>Chinese</p>
+        {cuisines.map(cuisine => (
+          <p className='font-light text-reg capitalize'>{cuisine.name}</p>
+        ))}
       </div>
       <div className='mt-3 pb-4'>
         <h1 className='mb-2'>Price</h1>
