@@ -55,7 +55,9 @@ async function Search({ searchParams }: { searchParams: { city: string } }) {
         <SearchSidebar locations={locations} cuisines={cuisines} />
         <div className='w-5/6'>
           {restaurants.length ? (
-            restaurants.map(restaurant => <RestaurantCard restaurant={restaurant} />)
+            restaurants.map(restaurant => (
+              <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+            ))
           ) : (
             <p>Sorry, no restaurants found.</p>
           )}

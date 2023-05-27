@@ -13,13 +13,17 @@ function SearchSidebar({
       <div className='border-b pb-4'>
         <h1 className='mb-2'>Region</h1>
         {locations.map(location => (
-          <p className='font-light text-reg capitalize'>{location.name}</p>
+          <p key={location.id} className='font-light text-reg capitalize'>
+            {location.name}
+          </p>
         ))}
       </div>
       <div className='border-b pb-4 mt-3'>
         <h1 className='mb-2'>Cuisine</h1>
         {cuisines.map(cuisine => (
-          <p className='font-light text-reg capitalize'>{cuisine.name}</p>
+          <p key={cuisine.id} className='font-light text-reg capitalize'>
+            {cuisine.name}
+          </p>
         ))}
       </div>
       <div className='mt-3 pb-4'>
