@@ -44,7 +44,11 @@ async function Search({ searchParams }: { searchParams: { city: string } }) {
       <div className='flex py-4 m-auto w-2/3 justify-between items-start'>
         <SearchSidebar />
         <div className='w-5/6'>
-          {restaurants.length ? <RestaurantCard /> : <p>Sorry, no restaurants found.</p>}
+          {restaurants.length ? (
+            restaurants.map(restaurant => <RestaurantCard restaurant={restaurant} />)
+          ) : (
+            <p>Sorry, no restaurants found.</p>
+          )}
         </div>
       </div>
     </>

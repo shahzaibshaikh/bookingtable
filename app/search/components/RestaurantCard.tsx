@@ -1,7 +1,18 @@
+import { Cuisine, Location, PRICE } from '@prisma/client';
 import Link from 'next/link';
 import React from 'react';
 
-function RestaurantCard() {
+interface Restaurant {
+  id: number;
+  name: string;
+  main_image: string;
+  price: PRICE;
+  cuisine: Cuisine;
+  location: Location;
+  slug: string;
+}
+
+function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
   return (
     <div className='border-b flex pb-5'>
       <img
