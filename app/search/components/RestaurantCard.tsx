@@ -35,7 +35,7 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
           </div>
         </div>
         <div className='text-red-600'>
-          <Link href='/restaurant/milestones-stones'>View more information</Link>
+          <Link href={`/restaurant/${restaurant.slug}`}>View more information</Link>
         </div>
       </div>
     </div>
