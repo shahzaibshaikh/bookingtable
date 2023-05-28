@@ -3,7 +3,7 @@ import Header from './components/Header';
 import SearchSidebar from './components/SearchSidebar';
 import RestaurantCard from './components/RestaurantCard';
 import { metadata } from '../layout';
-import { PrismaClient } from '@prisma/client';
+import { PRICE, PrismaClient } from '@prisma/client';
 
 metadata.title = 'Booking Table Search';
 
@@ -43,7 +43,11 @@ const fetchCuisines = async () => {
   return prisma.cuisine.findMany();
 };
 
-async function Search({ searchParams }: { searchParams: { city: string } }) {
+async function Search({
+  searchParams
+}: {
+  searchParams: { city?: string; cuisine?: string; price?: PRICE };
+}) {
   const restaurants = await fetchRestaurantsByCity(searchParams.city);
   const locations = await fetchLocations();
   const cuisines = await fetchCuisines();
