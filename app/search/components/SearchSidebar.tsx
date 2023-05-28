@@ -1,13 +1,15 @@
-import { Cuisine, Location } from '@prisma/client';
+import { Cuisine, Location, PRICE } from '@prisma/client';
 import Link from 'next/link';
 import React from 'react';
 
 function SearchSidebar({
   locations,
-  cuisines
+  cuisines,
+  searchParams
 }: {
   locations: Location[];
   cuisines: Cuisine[];
+  searchParams: { city?: string; cuisine?: string; price?: PRICE };
 }) {
   return (
     <div className='w-1/5'>
