@@ -1,4 +1,5 @@
 import { Cuisine, Location } from '@prisma/client';
+import Link from 'next/link';
 import React from 'react';
 
 function SearchSidebar({
@@ -10,12 +11,21 @@ function SearchSidebar({
 }) {
   return (
     <div className='w-1/5'>
-      <div className='border-b pb-4'>
+      <div className='border-b pb-4 flex flex-col'>
         <h1 className='mb-2'>Region</h1>
         {locations.map(location => (
-          <p key={location.id} className='font-light text-reg capitalize'>
+          <Link
+            href={{
+              pathname: '/search',
+              query: {
+                city: location.name
+              }
+            }}
+            key={location.id}
+            className='font-light text-reg capitalize'
+          >
             {location.name}
-          </p>
+          </Link>
         ))}
       </div>
       <div className='border-b pb-4 mt-3'>
