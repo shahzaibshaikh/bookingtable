@@ -28,12 +28,21 @@ function SearchSidebar({
           </Link>
         ))}
       </div>
-      <div className='border-b pb-4 mt-3'>
+      <div className='border-b pb-4 mt-3 flex flex-col'>
         <h1 className='mb-2'>Cuisine</h1>
         {cuisines.map(cuisine => (
-          <p key={cuisine.id} className='font-light text-reg capitalize'>
+          <Link
+            href={{
+              pathname: '/search',
+              query: {
+                cuisine: cuisine.name
+              }
+            }}
+            key={cuisine.id}
+            className='font-light text-reg capitalize'
+          >
             {cuisine.name}
-          </p>
+          </Link>
         ))}
       </div>
       <div className='mt-3 pb-4'>
