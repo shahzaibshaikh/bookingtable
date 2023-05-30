@@ -31,7 +31,7 @@ function SearchSidebar({
           </Link>
         ))}
       </div>
-      <div className='border-b pb-4 mt-3 flex flex-col'>
+      <div className='border-b pb-4 mt-3'>
         <h1 className='mb-2'>Cuisine</h1>
         {cuisines.map(cuisine => (
           <Link
