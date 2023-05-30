@@ -21,7 +21,7 @@ function SearchSidebar({
               pathname: '/search',
               query: {
                 ...searchParams,
-                city: location.name
+                city: location
               }
             }}
             key={location.id}
