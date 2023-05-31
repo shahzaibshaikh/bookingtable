@@ -13,7 +13,6 @@ const fetchRestaurantsByCity = (city: string | undefined) => {
   const select = {
     id: true,
     name: true,
-    main_image: true,
     price: true,
     cuisine: true,
     location: true,
