@@ -5,6 +5,8 @@ import RestaurantCard from './components/RestaurantCard';
 import { metadata } from '../layout';
 import { PRICE, PrismaClient } from '@prisma/client';
 
+metadata.title = 'Booking Table Search';
+
 const prisma = new PrismaClient();
 
 const fetchRestaurantsByCity = (city: string | undefined) => {
