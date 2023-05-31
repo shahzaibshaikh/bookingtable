@@ -39,7 +39,9 @@ const fetchLocations = async () => {
   return prisma.location.findMany();
 };
 
-const fetchCuisines = async () => {};
+const fetchCuisines = async () => {
+  return prisma.cuisine.findMany();
+};
 
 async function Search({
   searchParams
