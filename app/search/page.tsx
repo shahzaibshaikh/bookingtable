@@ -16,7 +16,6 @@ const fetchRestaurantsByCity = (city: string | undefined) => {
     main_image: true,
     price: true,
     cuisine: true,
-    location: true,
     slug: true
   };
 
