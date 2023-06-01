@@ -22,7 +22,7 @@ function SearchBar() {
           router.push(`/search?city=${location}`);
         }}
       >
-        Let's go
+        Lets go
       </button>
     </div>
   );
