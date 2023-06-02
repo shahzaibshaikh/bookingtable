@@ -21,7 +21,9 @@ function SearchBar() {
           if (location === '') return;
           router.push(`/search?city=${location}`);
         }}
-      ></button>
+      >
+        Lets go
+      </button>
     </div>
   );
 }
