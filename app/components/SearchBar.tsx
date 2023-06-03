@@ -23,7 +23,6 @@ function SearchBar() {
         }}
       >
         Lets go
-      </button>
     </div>
   );
 }
