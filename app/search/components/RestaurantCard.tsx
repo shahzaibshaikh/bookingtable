@@ -26,7 +26,7 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
         <div className='mb-9'>
           <div className='font-light flex text-reg'>
             <Price price={restaurant.price} />
-            <p className='mr-4 capitalize'>{restarant.cuisine.name}</p>
+            <p className='mr-4 capitalize'>{restaurant.cuisine.name}</p>
             <p className='mr-4 capitalize'>{restaurant.location.name}</p>
           </div>
         </div>
