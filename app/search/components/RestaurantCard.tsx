@@ -30,7 +30,7 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
             <p className='mr-4 capitalize'>{restaurant.location.name}</p>
           </div>
         </div>
-        <div className='text-red-200'>
+        <div className='text-red-600'>
           <Link href={`/restaurant/${restaurant.slug}`}>View more information</Link>
         </div>
       </div>
