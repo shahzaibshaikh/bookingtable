@@ -17,6 +17,15 @@ interface SearchParams {
 
 const fetchRestaurantsByCity = (searchParams: SearchParams) => {
   const where: any = {};
+
+  if (searchParams.city) {
+    const location = {
+      name: {
+        equals: searchParams.city.toLowerCase()
+      }
+    };
+    where.location = location;
+  }
   // prisma.restaurant.findMany({
   //   where: {
   //     location: {
