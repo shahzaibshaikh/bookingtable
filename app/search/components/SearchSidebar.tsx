@@ -52,13 +52,42 @@ function SearchSidebar({
       <div className='mt-3 pb-4'>
         <h1 className='mb-2'>Price</h1>
         <div className='flex'>
-          <button className='border w-full text-reg font-light rounded-l p-2'>$</button>
-          <button className='border-r border-t border-b w-full text-reg font-light p-2'>
+          <Link
+            href={{
+              pathname: '/search',
+              query: {
+                ...searchParams,
+                price: PRICE.CHEAP
+              }
+            }}
+            className='border w-full text-reg font-light rounded-l p-2'
+          >
+            $
+          </Link>
+          <Link
+            href={{
+              pathname: '/search',
+              query: {
+                ...searchParams,
+                price: PRICE.REGULAR
+              }
+            }}
+            className='border-r border-t border-b w-full text-reg font-light p-2'
+          >
             $$
-          </button>
-          <button className='border-r border-t border-b w-full text-reg font-light p-2 rounded-r'>
+          </Link>
+          <Link
+            href={{
+              pathname: '/search',
+              query: {
+                ...searchParams,
+                price: PRICE.EXPENSIVE
+              }
+            }}
+            className='border-r border-t border-b w-full text-reg font-light p-2 rounded-r'
+          >
             $$$
-          </button>
+          </Link>
         </div>
       </div>
     </div>
