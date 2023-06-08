@@ -42,23 +42,7 @@ const fetchRestaurantsByCity = (searchParams: SearchParams) => {
     };
     where.price = price;
   }
-  // prisma.restaurant.findMany({
-  //   where: {
-  //     location: {
-  //       name: {
-  //         equals: 'toronto'
-  //       }
-  //     },
-  //     cuisine: {
-  //       name: {
-  //         equals: 'mexican'
-  //       }
-  //     },
-  //     price: {
-  //       equals: PRICE.CHEAP
-  //     }
-  //   }
-  // });
+
   const select = {
     id: true,
     name: true,
@@ -69,19 +53,10 @@ const fetchRestaurantsByCity = (searchParams: SearchParams) => {
     slug: true
   };
 
-  if (!searchParams.city) return prisma.restaurant.findMany({ select });
-  else {
-    return prisma.restaurant.findMany({
-      where: {
-        location: {
-          name: {
-            equals: searchParams.city.toLowerCase()
-          }
-        }
-      },
-      select
-    });
-  }
+  return prisma.restaurant.findMany({
+    where,
+    select
+  });
 };
 
 const fetchLocations = async () => {
