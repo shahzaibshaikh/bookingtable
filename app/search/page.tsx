@@ -26,6 +26,22 @@ const fetchRestaurantsByCity = (searchParams: SearchParams) => {
     };
     where.location = location;
   }
+
+  if (searchParams.cuisine) {
+    const cuisine = {
+      name: {
+        equals: searchParams.cuisine.toLowerCase()
+      }
+    };
+    where.cuisine = cuisine;
+  }
+
+  if (searchParams.price) {
+    const price = {
+      equals: searchParams.price
+    };
+    where.price = price;
+  }
   // prisma.restaurant.findMany({
   //   where: {
   //     location: {
