@@ -9,7 +9,31 @@ metadata.title = 'Booking Table Search';
 
 const prisma = new PrismaClient();
 
+interface SearchParams {
+  city?: string;
+  cuisine?: string;
+  price?: PRICE;
+}
+
 const fetchRestaurantsByCity = (city: string | undefined) => {
+  const where: any = {};
+  // prisma.restaurant.findMany({
+  //   where: {
+  //     location: {
+  //       name: {
+  //         equals: 'toronto'
+  //       }
+  //     },
+  //     cuisine: {
+  //       name: {
+  //         equals: 'mexican'
+  //       }
+  //     },
+  //     price: {
+  //       equals: PRICE.CHEAP
+  //     }
+  //   }
+  // });
   const select = {
     id: true,
     name: true,
