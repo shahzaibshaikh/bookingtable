@@ -8,6 +8,7 @@ import Reviews from './components/Reviews';
 import ReservationCard from './components/ReservationCard';
 import { metadata } from '@/app/layout';
 import { PrismaClient, Review } from '@prisma/client';
+import { notFound } from 'next/navigation';
 
 metadata.title = 'Booking Table Restaurant';
 
@@ -34,7 +35,9 @@ const fetchRestaurant = async (slug: string) => {
       reviews: true
     }
   });
-  if (!restaurant) throw new Error('Cannot find restaurant');
+  if (!restaurant) {
+    notFound();
+  }
 
   return restaurant;
 };
