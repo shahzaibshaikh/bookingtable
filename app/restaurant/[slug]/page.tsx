@@ -34,6 +34,7 @@ const fetchRestaurant = async (slug: string) => {
       reviews: true
     }
   });
+  if (!restaurant) throw new Error('Cannot find restaurant');
 
   return restaurant;
 };
