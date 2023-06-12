@@ -30,6 +30,7 @@ function AuthModalInput({ inputs, handleInputChange }: Props) {
           placeholder='Last Name'
           name='lastname'
           value={inputs.lastname}
+          onChange={handleInputChange}
         />
       </div>
       <div className='my-3 flex justify-between text-sm'>
@@ -39,6 +40,7 @@ function AuthModalInput({ inputs, handleInputChange }: Props) {
           placeholder='Email'
           name='email'
           value={inputs.email}
+          onChange={handleInputChange}
         />
       </div>
       <div className='my-3 flex justify-between text-sm'>
@@ -48,6 +50,7 @@ function AuthModalInput({ inputs, handleInputChange }: Props) {
           placeholder='Phone'
           name='phone'
           value={inputs.phone}
+          onChange={handleInputChange}
         />
         <input
           type='text'
@@ -55,6 +58,7 @@ function AuthModalInput({ inputs, handleInputChange }: Props) {
           placeholder='City'
           name='city'
           value={inputs.city}
+          onChange={handleInputChange}
         />
       </div>
       <div className='my-3 flex justify-between text-sm'>
@@ -64,6 +68,7 @@ function AuthModalInput({ inputs, handleInputChange }: Props) {
           placeholder='Password'
           name='password'
           value={inputs.password}
+          onChange={handleInputChange}
         />
       </div>
     </div>
