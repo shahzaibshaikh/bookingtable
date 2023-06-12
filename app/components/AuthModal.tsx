@@ -32,6 +32,10 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
     password: ''
   });
 
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
+  };
+
   return (
     <div>
       <button
