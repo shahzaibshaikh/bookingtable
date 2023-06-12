@@ -1,6 +1,17 @@
 import React from 'react';
 
-function AuthModalInput() {
+interface Props {
+  inputs: {
+    firstname: string;
+    lastname: string;
+    email: string;
+    phone: string;
+    city: string;
+    password: string;
+  };
+}
+
+function AuthModalInput({ inputs }: Props) {
   return (
     <div>
       <div className='my-3 flex justify-between text-sm'>
