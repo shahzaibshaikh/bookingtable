@@ -9,9 +9,10 @@ interface Props {
     city: string;
     password: string;
   };
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function AuthModalInput({ inputs }: Props) {
+function AuthModalInput({ inputs, handleInputChange }: Props) {
   return (
     <div>
       <div className='my-3 flex justify-between text-sm'>
@@ -19,12 +20,15 @@ function AuthModalInput({ inputs }: Props) {
           type='text'
           className='border rounded p-2 py-3 w-[49%]'
           placeholder='First Name'
+          name='firstname'
           value={inputs.firstname}
+          onChange={handleInputChange}
         />
         <input
           type='text'
           className='border rounded p-2 py-3 w-[49%]'
           placeholder='Last Name'
+          name='lastname'
           value={inputs.lastname}
         />
       </div>
@@ -33,6 +37,7 @@ function AuthModalInput({ inputs }: Props) {
           type='email'
           className='border rounded p-2 py-3 w-full'
           placeholder='Email'
+          name='email'
           value={inputs.email}
         />
       </div>
@@ -41,12 +46,14 @@ function AuthModalInput({ inputs }: Props) {
           type='text'
           className='border rounded p-2 py-3 w-[49%]'
           placeholder='Phone'
+          name='phone'
           value={inputs.phone}
         />
         <input
           type='text'
           className='border rounded p-2 py-3 w-[49%]'
           placeholder='City'
+          name='city'
           value={inputs.city}
         />
       </div>
@@ -55,6 +62,7 @@ function AuthModalInput({ inputs }: Props) {
           type='password'
           className='border rounded p-2 py-3 w-full'
           placeholder='Password'
+          name='password'
           value={inputs.password}
         />
       </div>
