@@ -50,6 +50,9 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
                 {isSignIn ? 'Log Into Your Account' : 'Create Your BookingTable Account'}
               </h2>
               <AuthModalInput />
+              <button className='uppercase bg-red-600 w-full text-white p-3 rounded text-sm mb-5 disabled:bg-gray-400'>
+                {isSignIn ? 'Sign In' : 'Create Account'}
+              </button>
             </div>
           </div>
         </Box>
