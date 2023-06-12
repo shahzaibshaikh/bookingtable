@@ -27,7 +27,9 @@ export default function LoginModal({ isSignIn }: { isSignIn: boolean }) {
     <div>
       <button
         onClick={handleOpen}
-        className='bg-blue-400 text-white border p-1 px-4 rounded mr-3'
+        className={`${
+          isSignIn ? 'bg-blue-400 text-white' : ''
+        } border p-1 px-4 rounded mr-3`}
       >
         {isSignIn ? 'Sign In' : 'Sign Up'}
       </button>
