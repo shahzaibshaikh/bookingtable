@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import LoginModal from './LoginModal';
+import LoginModal from './AuthModal';
 
 function Navbar() {
   return (
