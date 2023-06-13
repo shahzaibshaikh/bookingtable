@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import validator from 'validator';
 
 export async function POST(req: NextRequest) {
-  const { firstname, lastname } = await req.json();
+  const { firstname, lastname, email, password, city, phone } = await req.json();
   const validationSchema = [
     {
       valid: validator.isLength(firstname, {
@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
         min: 1,
         max: 25
       }),
-      errorMessage: 'Firstname is invalid'
+      errorMessage: 'Lastname is invalid'
     }
   ];
 
