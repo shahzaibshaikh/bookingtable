@@ -3,6 +3,7 @@ import validator from 'validator';
 
 export async function POST(req: NextRequest) {
   const { firstname, lastname, email, password, city, phone } = await req.json();
+  const errors: string[] = [];
   const validationSchema = [
     {
       valid: validator.isLength(firstname, {
@@ -35,6 +36,16 @@ export async function POST(req: NextRequest) {
       errorMessage: 'Password is not strong'
     }
   ];
+
+  validationSchema.forEach(check => {
+    if (!check.valid) {
+      errors.push(check.errorMessage);
+    }
+  });
+
+  if (errors.length) {
+    return NextResponse.json({ error: errors }, { status: 400 });
+  }
 
   return NextResponse.json('body', { status: 200 });
 }
