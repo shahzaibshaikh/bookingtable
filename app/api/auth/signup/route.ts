@@ -1,5 +1,8 @@
+import { PrismaClient } from '@prisma/client';
 import { NextRequest, NextResponse } from 'next/server';
 import validator from 'validator';
+
+const prisma = new PrismaClient();
 
 export async function POST(req: NextRequest) {
   const { firstname, lastname, email, password, city, phone } = await req.json();
@@ -52,6 +55,19 @@ export async function POST(req: NextRequest) {
 
   if (errors.length) {
     return NextResponse.json({ error: errors }, { status: 400 });
+  }
+
+  const userWithEmail = await prisma.user.findUnique({
+    where: {
+      email: email
+    }
+  });
+
+  if (userWithEmail) {
+    return NextResponse.json(
+      { error: 'User with this email already exists' },
+      { status: 400 }
+    );
   }
 
   return NextResponse.json('body', { status: 200 });
