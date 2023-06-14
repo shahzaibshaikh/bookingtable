@@ -17,6 +17,22 @@ export async function POST(req: NextRequest) {
         max: 25
       }),
       errorMessage: 'Lastname is invalid'
+    },
+    {
+      valid: validator.isEmail(email),
+      errorMessage: 'Email is invalid'
+    },
+    {
+      valid: validator.isMobilePhone(phone),
+      errorMessage: 'Phone number is invalid'
+    },
+    {
+      valid: validator.isLength(city, { min: 1 }),
+      errorMessage: 'City is invalid'
+    },
+    {
+      valid: validator.isStrongPassword(password),
+      errorMessage: 'Password is not strong'
     }
   ];
 
