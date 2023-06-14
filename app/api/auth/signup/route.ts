@@ -3,6 +3,13 @@ import validator from 'validator';
 
 export async function POST(req: NextRequest) {
   const { firstname, lastname, email, password, city, phone } = await req.json();
+  if (!firstname || !lastname || !email || !password || !city || !phone) {
+    return NextResponse.json(
+      { error: 'Not all required parameters are sent' },
+      { status: 400 }
+    );
+  }
+
   const errors: string[] = [];
   const validationSchema = [
     {
