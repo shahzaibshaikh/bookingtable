@@ -15,5 +15,5 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized request' }, { status: 401 });
   }
 
-  return NextResponse.json(token);
+  return NextResponse.json();
 }
