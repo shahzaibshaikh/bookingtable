@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
   const secret = new TextEncoder().encode(process.env.JWT_SECRET_KEY);
 
   try {
-    await jose.jwtVerify(token, secret);
+    await jose.(token, secret);
   } catch (error) {
     return NextResponse.json({ error: 'Unauthorized request' }, { status: 401 });
   }
