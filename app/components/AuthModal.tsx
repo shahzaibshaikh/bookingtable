@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useEffect, useState } from 'react';
 import AuthModalInput from './AuthModalInput';
+import useAuth from '@/hooks/useAuth';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -32,6 +33,8 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
     city: '',
     password: ''
   });
+
+  const { signin } = useAuth();
 
   useEffect(() => {
     if (isSignIn) {
