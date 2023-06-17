@@ -38,6 +38,17 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
       if (inputs.email && inputs.password) {
         return setDisabled(false);
       }
+    } else {
+      if (
+        inputs.firstname &&
+        inputs.lastname &&
+        inputs.email &&
+        inputs.city &&
+        inputs.phone &&
+        inputs.password
+      ) {
+        return setDisabled(false);
+      }
     }
     setDisabled(true);
   }, [inputs]);
