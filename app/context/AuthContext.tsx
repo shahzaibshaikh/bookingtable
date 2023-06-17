@@ -28,7 +28,11 @@ function AuthContext({ children }: { children: React.ReactNode }) {
     data: null,
     error: null
   });
-  return <div>{children}</div>;
+  return (
+    <AuthenticationContext.Provider value={authState}>
+      {children}
+    </AuthenticationContext.Provider>
+  );
 }
 
 export default AuthContext;
