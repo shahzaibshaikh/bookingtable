@@ -16,7 +16,7 @@ interface AuthState {
   error: User | null;
 }
 
-const AuthenticationContext = <AuthState>({
+const AuthenticationContext = createContext<AuthState>({
   loading: false,
   data: null,
   error: null
