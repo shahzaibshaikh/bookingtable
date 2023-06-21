@@ -24,7 +24,7 @@ const AuthenticationContext = <AuthState>({
 
 function AuthContext({ children }: { children: React.ReactNode }) {
   const [authState, setAuthState] = useState({
- 
+    loading: false,
     data: null,
     error: null
   });
