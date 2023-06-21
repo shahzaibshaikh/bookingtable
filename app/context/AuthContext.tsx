@@ -30,7 +30,7 @@ function AuthContext({ children }: { children: React.ReactNode }) {
   });
   return (
     <AuthenticationContext.Provider value={authState}>
-      {children}
+      
     </AuthenticationContext.Provider>
   );
 }
