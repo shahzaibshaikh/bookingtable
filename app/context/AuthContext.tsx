@@ -23,17 +23,18 @@ interface AuthState extends State {
 const AuthenticationContext = createContext<AuthState>({
   loading: false,
   data: null,
-  error: null
+  error: null,
+  setAuthState: () => {}
 });
 
 function AuthContext({ children }: { children: React.ReactNode }) {
-  const [authState, setAuthState] = useState({
+  const [authState, setAuthState] = useState<State>({
     loading: false,
     data: null,
     error: null
   });
   return (
-    <AuthenticationContext.Provider value={authState}>
+    <AuthenticationContext.Provider value={{ ...authState, setAuthState }}>
       {children}
     </AuthenticationContext.Provider>
   );
