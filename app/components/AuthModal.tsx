@@ -4,9 +4,10 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import AuthModalInput from './AuthModalInput';
 import useAuth from '@/hooks/useAuth';
+import { AuthenticationContext } from '../context/AuthContext';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -33,8 +34,8 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
     city: '',
     password: ''
   });
-
   const { signin } = useAuth();
+  const { loading, data, error } = useContext(AuthenticationContext);
 
   useEffect(() => {
     if (isSignIn) {
@@ -83,28 +84,34 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
         aria-describedby='modal-modal-description'
       >
         <Box sx={style}>
-          <div className='p-2'>
-            <div className='uppercase font-bold text-center pb-2 border-b mb-2'>
-              <p className='text-sm'>{isSignIn ? 'Sign In' : 'Create Account'}</p>
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <div className='p-2'>
+              <div className='uppercase font-bold text-center pb-2 border-b mb-2'>
+                <p className='text-sm'>{isSignIn ? 'Sign In' : 'Create Account'}</p>
+              </div>
+              <div className='m-auto'>
+                <h2 className='text-2xl font-light text-center'>
+                  {isSignIn
+                    ? 'Log Into Your Account'
+                    : 'Create Your BookingTable Account'}
+                </h2>
+                <AuthModalInput
+                  inputs={inputs}
+                  handleInputChange={handleChangeInput}
+                  isSignIn={isSignIn}
+                />
+                <button
+                  className='uppercase bg-red-600 w-full text-white p-3 rounded text-sm mb-5 disabled:bg-gray-400'
+                  disabled={disabled}
+                  onClick={handleClick}
+                >
+                  {isSignIn ? 'Sign In' : 'Create Account'}
+                </button>
+              </div>
             </div>
-            <div className='m-auto'>
-              <h2 className='text-2xl font-light text-center'>
-                {isSignIn ? 'Log Into Your Account' : 'Create Your BookingTable Account'}
-              </h2>
-              <AuthModalInput
-                inputs={inputs}
-                handleInputChange={handleChangeInput}
-                isSignIn={isSignIn}
-              />
-              <button
-                className='uppercase bg-red-600 w-full text-white p-3 rounded text-sm mb-5 disabled:bg-gray-400'
-                disabled={disabled}
-                onClick={handleClick}
-              >
-                {isSignIn ? 'Sign In' : 'Create Account'}
-              </button>
-            </div>
-          </div>
+          )}
         </Box>
       </Modal>
     </div>
