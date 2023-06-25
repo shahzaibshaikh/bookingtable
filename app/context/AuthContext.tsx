@@ -10,10 +10,14 @@ interface User {
   phone: string;
 }
 
-interface AuthState {
+interface State {
   loading: boolean;
   data: string | null;
   error: User | null;
+}
+
+interface AuthState extends State {
+  setAuthState: React.Dispatch<React.SetStateAction<State>>;
 }
 
 const AuthenticationContext = createContext<AuthState>({
