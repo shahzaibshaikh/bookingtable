@@ -16,9 +16,17 @@ const useAuth = () => {
         email,
         password
       });
-      console.log(response);
-    } catch (error) {
-      console.log(error);
+      setAuthState({
+        data: response.data,
+        error: null,
+        loading: false
+      });
+    } catch (error: any) {
+      setAuthState({
+        data: null,
+        error: error.response.data,
+        loading: false
+      });
     }
   };
   const signup = async () => {};
