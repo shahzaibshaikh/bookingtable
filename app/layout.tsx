@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar';
+import AuthContext from './context/AuthContext';
 import './globals.css';
 import { Inter } from 'next/font/google';
 
@@ -14,10 +15,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <body className={inter.className}>
         <main className='bg-gray-100 min-h-screen w-screen'>
-          <main className='max-w-screen-2xl m-auto bg-white'>
-            <Navbar />
-            {children}
-          </main>
+          <AuthContext>
+            <main className='max-w-screen-2xl m-auto bg-white'>
+              <Navbar />
+              {children}
+            </main>
+          </AuthContext>
         </main>
       </body>
     </html>
