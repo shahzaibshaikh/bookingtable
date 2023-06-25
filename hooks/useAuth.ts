@@ -24,7 +24,7 @@ const useAuth = () => {
     } catch (error: any) {
       setAuthState({
         data: null,
-        error: error.response.data,
+        error: error.response.data.error,
         loading: false
       });
     }
