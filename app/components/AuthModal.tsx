@@ -107,7 +107,7 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
                   disabled={disabled}
                   onClick={handleClick}
                 >
-                  {isSignIn ? 'Sign In' : 'Create Super'}
+                  {isSignIn ? 'Sign In' : 'Create Account'}
                 </button>
               </div>
             </div>
