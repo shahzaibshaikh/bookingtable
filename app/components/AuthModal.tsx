@@ -83,7 +83,7 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
         aria-labelledby='modal-modal-title'
         aria-describedby='modal-modal-description'
       >
-        <Box sx={style}>
+        <Box sx={}>
           {loading ? (
             <div>Loading...</div>
           ) : (
