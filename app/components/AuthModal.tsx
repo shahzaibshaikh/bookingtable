@@ -90,10 +90,11 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
             </div>
           ) : (
             <div className='p-2'>
-              <Alert severity='error' className='mb-4'>
-                {' '}
-                This is an error.
-              </Alert>
+              {error ? (
+                <Alert severity='error' className='mb-4'>
+                  {error}
+                </Alert>
+              ) : null}
               <div className='uppercase font-bold text-center pb-2 border-b mb-2'>
                 <p className='text-sm'>{isSignIn ? 'Sign In' : 'Create Account'}</p>
               </div>
