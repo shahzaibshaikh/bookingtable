@@ -99,7 +99,7 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
                 </h2>
                 <AuthModalInput
                   inputs={inputs}
-                  handleInputChange={handleCangeInput}
+                  handleInputChange={handleChangeInput}
                   isSignIn={isSignIn}
                 />
                 <button
