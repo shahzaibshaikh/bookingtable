@@ -7,6 +7,7 @@ import { useContext, useEffect, useState } from 'react';
 import AuthModalInput from './AuthModalInput';
 import useAuth from '@/hooks/useAuth';
 import { AuthenticationContext } from '../context/AuthContext';
+import Alert from '@mui/material/Alert';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -89,6 +90,10 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
             </div>
           ) : (
             <div className='p-2'>
+              <Alert severity='error' className='mb-4'>
+                {' '}
+                This is an error.
+              </Alert>
               <div className='uppercase font-bold text-center pb-2 border-b mb-2'>
                 <p className='text-sm'>{isSignIn ? 'Sign In' : 'Create Account'}</p>
               </div>
