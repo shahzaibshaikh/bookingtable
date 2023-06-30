@@ -56,6 +56,8 @@ export async function POST(req: NextRequest) {
     .setExpirationTime('24h')
     .sign(secret);
 
+  cookies().set('jwt', token);
+
   return NextResponse.json(
     {
       firstname: userWithEmail.first_name,
