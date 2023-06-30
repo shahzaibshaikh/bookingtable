@@ -1,8 +1,7 @@
 'use client';
 
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import CircularProgress from '@mui/material/CircularProgress';
 import Modal from '@mui/material/Modal';
 import { useContext, useEffect, useState } from 'react';
 import AuthModalInput from './AuthModalInput';
@@ -85,7 +84,9 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
       >
         <Box sx={style}>
           {loading ? (
-            <div>Loading...</div>
+            <div className='py-24 px-2 flex justify-center'>
+              <CircularProgress />
+            </div>
           ) : (
             <div className='p-2'>
               <div className='uppercase font-bold text-center pb-2 border-b mb-2'>
