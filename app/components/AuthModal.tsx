@@ -101,7 +101,7 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
               <div className='m-auto'>
                 <h2 className='text-2xl font-light text-center'>
                   {isSignIn
-                    ? 'Log Into Your Account'\
+                    ? 'Log Into Your Account'
                     : 'Create Your BookingTable Account'}
                 </h2>
                 <AuthModalInput
