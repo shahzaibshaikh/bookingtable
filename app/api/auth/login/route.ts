@@ -3,8 +3,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import validator from 'validator';
 import bcrypt from 'bcrypt';
 import * as jose from 'jose';
-import { cookies } from 'next/headers';
-
 const prisma = new PrismaClient();
 
 export async function POST(req: NextRequest) {
