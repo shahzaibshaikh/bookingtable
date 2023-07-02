@@ -6,7 +6,10 @@ import { useContext } from 'react';
 const useAuth = () => {
   const { data, error, loading, setAuthState } = useContext(AuthenticationContext);
 
-  const signin = async ({ email, password }: { email: string; password: string }) => {
+  const signin = async (
+    { email, password }: { email: string; password: string },
+    handleClose: () => void
+  ) => {
     setAuthState({
       data: null,
       error: null,
