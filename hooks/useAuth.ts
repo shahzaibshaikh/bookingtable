@@ -1,5 +1,6 @@
 import { AuthenticationContext } from '@/app/context/AuthContext';
 import axios from 'axios';
+import { setCookie } from 'cookies-next';
 import { useContext } from 'react';
 
 const useAuth = () => {
@@ -21,6 +22,7 @@ const useAuth = () => {
         error: null,
         loading: false
       });
+      setCookie('jwt', response.data.token);
     } catch (error: any) {
       setAuthState({
         data: null,
