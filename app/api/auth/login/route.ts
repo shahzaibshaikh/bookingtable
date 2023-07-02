@@ -7,7 +7,7 @@ import { setCookie } from 'cookies-next';
 
 const prisma = new PrismaClient();
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest, res: NextResponse) {
   const { email, password } = await req.json();
   const errors: string[] = [];
 
@@ -62,7 +62,8 @@ export async function POST(req: NextRequest) {
       lastname: userWithEmail.last_name,
       email: userWithEmail.email,
       phone: userWithEmail.phone,
-      city: userWithEmail.city
+      city: userWithEmail.city,
+      token: token
     },
     { status: 200 }
   );
