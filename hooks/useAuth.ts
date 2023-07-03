@@ -59,9 +59,13 @@ const useAuth = () => {
       loading: true
     });
     try {
-      const response = await axios.post('http://localhost:3002/api/auth/login', {
+      const response = await axios.post('http://localhost:3002/api/auth/register', {
         email,
-        password
+        password,
+        firstname,
+        lastname,
+        city,
+        phone
       });
       setAuthState({
         data: response.data,
