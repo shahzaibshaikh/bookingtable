@@ -26,6 +26,7 @@ const useAuth = () => {
         loading: false
       });
       setCookie('jwt', response.data.token);
+      handleClose();
     } catch (error: any) {
       setAuthState({
         data: null,
