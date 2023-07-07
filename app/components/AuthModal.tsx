@@ -21,7 +21,7 @@ const style = {
   borderRadius: '10px'
 };
 
-export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
+export function AuthModal({ isSignIn }: { isSignIn: boolean }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
