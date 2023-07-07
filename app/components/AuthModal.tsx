@@ -29,7 +29,10 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
   const [inputs, setInputs] = useState({
     firstname: '',
     lastname: '',
-    email: ''
+    email: '',
+    phone: '',
+    city: '',
+    password: ''
   });
   const { signin } = useAuth();
   const { loading, data, error } = useContext(AuthenticationContext);
