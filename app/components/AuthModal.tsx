@@ -27,12 +27,7 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
   const handleClose = () => setOpen(false);
   const [disabled, setDisabled] = useState(true);
   const [inputs, setInputs] = useState({
-    firstname: '',
-    lastname: '',
-    email: '',
-    phone: '',
-    city: '',
-    password: ''
+    firstname: ''
   });
   const { signin } = useAuth();
   const { loading, data, error } = useContext(AuthenticationContext);
