@@ -35,7 +35,7 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
     password: ''
   });
   const { signin } = useAuth();
-  const { loading, data, error } = useContext(AuthenticationContext);
+  const { loading, error } = useContext(AuthenticationContext);
 
   useEffect(() => {
     if (isSignIn) {
