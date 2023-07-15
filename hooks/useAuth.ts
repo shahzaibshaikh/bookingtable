@@ -1,6 +1,6 @@
 import { AuthenticationContext } from '@/app/context/AuthContext';
 import axios from 'axios';
-import { setCookie } from 'cookies-next';
+import { getCookie, setCookie } from 'cookies-next';
 import { useContext } from 'react';
 
 const useAuth = () => {
@@ -81,6 +81,19 @@ const useAuth = () => {
         loading: false
       });
     }
+  };
+
+  const fetchUser = () => {
+    setAuthState({
+      data: null,
+      error: null,
+      loading: true
+    });
+    try {
+      const jwt = getCookie('jwt');
+      if (!jwt) {
+      }
+    } catch (error) {}
   };
 
   return { signin, signup };
