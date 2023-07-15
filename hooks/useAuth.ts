@@ -83,44 +83,7 @@ const useAuth = () => {
     }
   };
 
-  const fetchUser = async () => {
-    setAuthState({
-      data: null,
-      error: null,
-      loading: true
-    });
-    try {
-      const jwt = getCookie('jwt');
-      if (!jwt) {
-        setAuthState({
-          data: null,
-          error: null,
-          loading: false
-        });
-      }
-      const response = await axios.get('http://localhost:3002/api/auth/me', {
-        headers: {
-          Authorization: `Bearer ${jwt}`
-        }
-      });
-
-      axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
-
-      setAuthState({
-        data: response.data,
-        error: null,
-        loading: false
-      });
-    } catch (error: any) {
-      setAuthState({
-        data: null,
-        error: error.response.data.error,
-        loading: false
-      });
-    }
-  };
-
-  return { signin, signup, fetchUser };
+  return { signin, signup };
 };
 
 export default useAuth;
