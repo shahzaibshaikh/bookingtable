@@ -28,5 +28,19 @@ export async function POST(req: NextRequest) {
     }
   });
 
-  return NextResponse.json(user, { status: 200 });
+  if (!user) {
+    return NextResponse.json({ error: 'User not found' }, { status: 401 });
+  }
+
+  return NextResponse.json(
+    {
+      id: user.id,
+      firstname: user.first_name,
+      lastname: user.last_name,
+      phone: user.phone,
+      city: user.city,
+      email: user.email
+    },
+    { status: 200 }
+  );
 }
