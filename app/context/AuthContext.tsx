@@ -1,5 +1,6 @@
 'use client';
-import React, { createContext, useState } from 'react';
+import useAuth from '@/hooks/useAuth';
+import React, { createContext, useEffect, useState } from 'react';
 
 interface User {
   id: number;
@@ -33,6 +34,13 @@ function AuthContext({ children }: { children: React.ReactNode }) {
     data: null,
     error: null
   });
+
+  const { fetchUser } = useAuth();
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
   return (
     <AuthenticationContext.Provider value={{ ...authState, setAuthState }}>
       {children}
