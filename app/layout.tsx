@@ -19,7 +19,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <main className='max-w-screen-2xl m-auto bg-white'>
               <Navbar />
               {children}
-              {children}
             </main>
           </AuthContext>
         </main>
