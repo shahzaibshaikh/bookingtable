@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-//rebuilding my coding journey
+
 model Restaurant{
   id            Int       @id   @default(autoincrement())
   name          String
